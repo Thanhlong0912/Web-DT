@@ -1,0 +1,149 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Index.master.cs" Inherits="Shop_Online.Index" %>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Mobile Shop</title>
+	<asp:ContentPlaceHolder ID="phHome" runat="server">       
+        </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"  type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css"/ type="text/css" />
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css"  type="text/css"/>
+    <link rel="stylesheet" href="/fonts/font-slider.css" type="text/css"/>
+	<script src="/js/jquery-2.1.1.js"></script> 
+    <script src="/js/bootstrap.min.js"></script>
+	<script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    </head>
+<body>
+    <form id="frmHome" runat="server">
+        	<!--Top-->
+	<nav id="top">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6">
+					<select class="language">
+						<option value="Tiếng Việt" selected>Tiếng Việt</option>
+						<option value="English">English</option>
+					</select>
+					<select class="currency">
+						<option value="VNĐ" selected>VNĐ</option>
+						<option value="USD">USD</option>
+					</select>
+				</div>
+				<div class="col-xs-6">
+					<ul class="top-link">
+						<li>
+						<ASP:HYPERLINK ID="dangnhap" runat="server" NavigateUrl="~/FormDN.aspx" style="margin-right:35px" CssClass="font-dangnhap"><span class="glyphicon glyphicon-user"></span> Đăng Nhập</ASP:HYPERLINK>
+						</li>
+						<li>
+						<ASP:HYPERLINK ID="dangky" runat="server" NavigateUrl="~/FormDK.aspx" style="margin-left:35px" CssClass="font-dangky"><span class="glyphicon glyphicon-envelope"></span> Đăng Ký</ASP:HYPERLINK>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>		
+	</nav>
+	<!--Header-->
+	<header class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div id="logo"><img src="images/logo.png" /></div>
+			</div>
+			<div class="col-md-4">
+                <div class="form-search">					
+                    <asp:TextBox ID="txtSearch"  runat="server" Placeholder="Nhập sản phầm cần tìm" Width="410px"></asp:TextBox>       
+					<asp:Button ID="Button1" runat="server" Text="Tìm kiếm" OnClick="Button1_Click" />					
+                </div>
+			</div>
+			<div class="col-md-4">
+				<div id="cart"> <asp:Label runat="server" ID="lblxinchao"/> <a class="btn btn-1" href="GioHang.aspx"><span class="glyphicon glyphicon-shopping-cart"></span>Giỏ Hàng</a></div>
+			</div>
+		</div>
+		<div>
+			<nav id="menu" class="navbar">
+		<div class="container">
+			<div class="navbar-header"><span id="heading" class="visible-xs">Categories</span>
+			  <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+			</div>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="Index.aspx">Trang Chủ</a></li>
+					<li class="dropdown"><asp:HyperLink id="Danhsachsanpham" runat="server" NavigateUrl="~/SanPham.aspx"> &#8801 Danh Sách Sản Phẩm</asp:HyperLink></li>											
+					<li class="dropdown"><asp:HyperLink id="Tintuc" runat="server" NavigateUrl="~/TinTuc.aspx"> Tin Tức</asp:HyperLink></li>				
+					<li class="dropdown"><asp:HyperLink id="Lienhe" runat="server" NavigateUrl="~/LienHe.aspx"> Liên Hệ</asp:HyperLink></li>
+					<li class="dropdown"><asp:HyperLink id="QuanLyTK" runat="server" NavigateUrl="~/admin/QuanLySP.aspx"> Quản Lý Sản Phẩm</asp:HyperLink></li>	
+				</ul>
+			</div>
+		</div>
+	</nav>
+	</div>
+	</header>
+       
+		<div class="maincontet">
+                    <asp:ContentPlaceHolder ID="maincontent" runat="server"></asp:ContentPlaceHolder>
+                     
+                </div> 
+
+	<footer>
+		<div class="container">
+			<div class="wrap-footer">
+				<div class="row">
+					<div class="col-md-3 col-footer footer-1">
+						<img src="images/logofooter.png" />
+						<p>Chúng tôi cam đoan nếu hàng không như ảnh.Chúng tôi sẽ hoàn trả tiền 100%</p>
+					</div>
+					<div class="col-md-3 col-footer footer-2">
+						<div class="heading"><h4>Dịch Vụ Khách Hàng</h4></div>
+						<ul>
+							<li><a href="#">Về Chúng Tôi</a></li>
+							<li><a href="#">Thông Tin Giao Hàng</a></li>
+							<li><a href="#">Chính Sách Bảo Mật</a></li>
+							<li><a href="#">Điều Khoản & Điều Kiện</a></li>
+							<li><a href="#">Liên Hệ Chúng Tôi</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 col-footer footer-3">
+						<div class="heading"><h4>Tài Khoản Của Tôi</h4></div>
+						<ul>
+							<li><a href="#">Tải Khoản</a></li>
+							<li><a href="#">Nhãn Hiệu</a></li>
+							<li><a href="#">Phiếu Quà Tặng</a></li>
+							<li><a href="#">Đặt Biệt</a></li>
+							<li><a href="#">Site Map</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 col-footer footer-4">
+						<div class="heading"><h4>Liên Hệ Chúng tôi</h4></div>
+						<ul>
+							<li><span class="glyphicon glyphicon-home"></span>Quận 12, TP Hồ Chí Minh</li>
+							<li><span class="glyphicon glyphicon-earphone"></span>0987654321</li>
+							<li><span class="glyphicon glyphicon-envelope"></span>ngay9thang12nam2001@gmail.com</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						ThànhLong Store © 2021 - <a href="https://www.thegioididong.com/" rel="nofollow" target="_blank">MobileShop</a> Designed by <a href="https://www.thegioididong.com/" rel="nofollow" target="_blank">ThànhLong</a>
+					</div>
+					<div class="col-md-6">
+						<div class="pull-right">
+							<ul>
+								<li><img src="images/visa-curved-32px.png" /></li>
+								<li><img src="images/paypal-curved-32px.png" /></li>
+								<li><img src="images/discover-curved-32px.png" /></li>
+								<li><img src="images/maestro-curved-32px.png" /></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+    
+    </form>
+</body>
+</html>
